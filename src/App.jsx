@@ -3,6 +3,7 @@ import { Signup } from "./pages/Signup";
 import { Dashboard } from "./pages/Dashboard";
 import { Sendmoney } from "./pages/Sendmoney";
 import { Signin } from "./pages/Signin";
+import { useState } from "react";
 
 function App() {
   return (
