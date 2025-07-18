@@ -4,6 +4,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { Sendmoney } from "./pages/Sendmoney";
 import { Signin } from "./pages/Signin";
 import { useState } from "react";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -12,8 +13,22 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sendmoney" element={<Sendmoney />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/sendmoney"
+            element={
+              <ProtectedRoute>
+                <Sendmoney />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
