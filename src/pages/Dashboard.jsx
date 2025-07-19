@@ -9,7 +9,7 @@ export function Dashboard() {
   const [name, setName] = useState();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/account/balance", {
+      .get("https://paytm-backend-alpha.vercel.app/api/v1/account/balance", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -20,7 +20,7 @@ export function Dashboard() {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/user/me", {
+      .get("https://paytm-backend-alpha.vercel.app/api/v1/user/me", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

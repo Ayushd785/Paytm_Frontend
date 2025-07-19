@@ -53,7 +53,7 @@ export const Sendmoney = () => {
                     }
 
                     const response = await axios.post(
-                      "http://localhost:3000/api/v1/account/transfer",
+                      "https://paytm-backend-alpha.vercel.app/api/v1/account/transfer",
                       {
                         amount: Number(amount),
                         to: id,
