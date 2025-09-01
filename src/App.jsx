@@ -7,9 +7,13 @@ import { useState } from "react";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
+  // Extract project ID from current path automatically
+  const projectId = window.location.pathname.split("/")[1];
+  const basename = projectId ? `/${projectId}` : "";
+
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
